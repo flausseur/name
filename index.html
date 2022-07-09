@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head></head>
+    <body>
+        <label for="number">Nhập một số bất kì:</label><br>
+        <input type="text" id="number" name="number" value=""><br>
+
+        <input type="radio" id="even" name="even_or_odd" value="">
+        <label for="even">Số chẵn</label><br>
+
+        <input type="radio" id="odd" name="even_or_odd" value="">
+        <label for="odd">Số lẻ</label><br>
+
+        <button type="button" id="submit" onclick="checkInput()">Submit</button>
+
+        <div id="total"></div>
+        <script>
+            var total = 0;
+            var i = 0;
+            var n;
+            var odd;
+            var even;
+            function checkInput(){
+                n = parseInt(document.getElementById("number").value);
+                odd = document.getElementById("odd");
+                even = document.getElementById("even");
+                if (even.checked) {
+                    while (i <= n) {
+                        if (i % 2 == 0){
+                            total += i;
+                        }
+                        i++;
+                    }
+                    document.getElementById("total").innerHTML = "Tổng các số chẵn từ 1 đến " + n + " là: " + total;
+
+                } else {
+                    while (i <= n) {
+                        if (i % 2 != 0){
+                            total += i;
+                        }
+                        i++;
+                    }
+                    document.getElementById("total").innerHTML = "Tổng các số lẻ từ 1 đến " + n + " là: " + total;
+                }
+            }
+        </script>
+
+        
+    </body>
+</html>
